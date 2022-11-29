@@ -12,9 +12,9 @@
     <script>
         $(function() {
     var i = 0;
-    var colors = ["#FF0000", "#FFFF00", "#00FF00", "#00FFFF", "#0000FF"];
+    var colors = ["#9a83ff", "#FFFF00", "#b98ae5", "#00e0ff"];
     setInterval(function() {
-        var color = colors[i = i++ > 4 ? 0 : i];
+        var color = colors[i = i++ > 3 ? 0 : i];
         $("meta[name='theme-color']").attr('content', color);
         $("#x").text(color);
     }, 500);
