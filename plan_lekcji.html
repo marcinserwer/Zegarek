@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan lekcji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <script src="new_script.js" type="text/javascript"></script>
+</head>
+<body>
+    <a id="Plan" href="index.html">Zegar</a>
+    <div id="Aktualna_godzina"></div>
+        <div id="Glowny_blokk">
+            <select onchange="wypisywanie_planu_lekcji(value);">
+                <option id="pierwsza_opcja" value="" selected disabled hidden>Wybierz dzień</option>
+                <option value="1">Poniedziałek</option>
+                <option value="2">Wtorek</option>
+                <option value="3">Środa</option>
+                <option value="4">Czwartek</option>
+                <option value="5">Piątek</option>
+                <option value="6">Sobota</option>
+                <option value="0">Niedziela</option>
+            </select>
+            <div id="Plan_lekcji"></div>
+        </div>
+    <div id="Jaka_Data"></div>
+</body>
+</html>
+<script>
+    var teraz = new Date();
+    var numer_dnia = teraz.getDay().toString();
+    wypisywanie_planu_lekcji(numer_dnia);
+    setInterval(odliczanie, 1000); //Powtarza skrypt co sekudnę
+    odliczanie();
+    Data();
+</script>

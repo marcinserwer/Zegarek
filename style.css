@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300');
+*{
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle, rgba(154,131,255,1) 0%, rgba(185,138,229,1) 40%, rgba(0,224,255,1) 100%);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+    color: white;
+    font-size: 7vmin;
+    font-weight: 600;
+    font-family: Lato, sans-serif;
+    text-align: center;
+}
+#Glowny_blok{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#Aktualna_godzina{
+    font-size: 13vmin;
+}
+#Jaka_Data{
+    font-size: 4vmin;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#Plan{
+    font-size:  3.3vmin;
+    left: 0;
+    position: absolute;
+    margin-left: 3vmax;
+    margin-top: 3vmax;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#Plan_lekcji{
+    font-size: 4vmin;
+    padding-top: 3vh;
+}
+#Plan_lekcji p{
+    padding: 0.4vh;
+}
+select{
+    font-size: 2vmin;
+    padding: 7px 40px 7px 12px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    background-color: white;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
