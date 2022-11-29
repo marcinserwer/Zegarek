@@ -113,19 +113,19 @@ function odliczanie(){
 function doPrzerwy(){
     var data = new Date(); //Pobiera aktualny czas
 
-    if(numer_dnia === 0 || numer_dnia === 1){//Jeśli jest niedziela lub poniedziałek wypisuje że to jest dzień wolny
+    if(numer_dnia === 0 || numer_dnia === 1){ //Jeśli jest niedziela lub poniedziałek wypisuje że to jest dzień wolny
         document.getElementById("Glowny_blok").innerHTML = "Dzień wolny!";
-    }else if(data.getTime() > koniec_lekcji[12].getTime()){//Jeśli jest po ostatnim dzwonku wypisuje koniec lekcji
+    }else if(data.getTime() > koniec_lekcji[12].getTime()){ //Jeśli jest po ostatnim dzwonku wypisuje koniec lekcji
         document.getElementById("Glowny_blok").innerHTML = "Koniec Lekcji!";
     }else{
         for(i = 0; i <= koniec_lekcji.length; i++){
             if(data.getTime() < koniec_lekcji[i].getTime()){
                 var konieclekcji = koniec_lekcji[i]; //Koniec najbliższej lekcji
                 var poczateklekcji = poczatek_lekcji[i+1]; //Początek następnej lekcji
-                var pomocnica_poczateklekcji = poczatek_lekcji[i];//Koniec aktualnej przerwy
+                var pomocnica_poczateklekcji = poczatek_lekcji[i]; //Koniec aktualnej przerwy
                 break;
             }
-        }//Wyszukiwanie najbliższego końca lekcji i ustawienie początek następnej lekcji
+        } //Wyszukiwanie najbliższego końca lekcji i ustawienie początek następnej lekcji
          if(data.getTime() > koniec_lekcji[i-1].getTime() && data.getTime() < poczatek_lekcji[i].getTime()){
                 var pozostalyCzas = pomocnica_poczateklekcji.getTime() - data.getTime(); //Zwraca czas przerwy w milisekundach
                 przerwa_minuty_pozostaly = Math.floor((pozostalyCzas / 60000) % 60); //Oblicza i zaogrągla pozostałe minuty do przerwy
@@ -165,7 +165,7 @@ function doPrzerwy(){
                 if(minuty_pozostaly == 0 && sekundy_pozostaly == 0){
                     fajerwerki();
                 }
-            }//Obliczanie do końca lekcji
+            } //Obliczanie do końca lekcji
         Lekcja();
     }    
 }
@@ -210,10 +210,10 @@ function Lekcja(){
 }
 
 function Jaka_lekcja(Plan_lekcyjny){
-    if(Plan_lekcyjny[i+1] === undefined && Plan_lekcyjny[i] !== undefined){ //Jeśli aktualna lekcja istnieje a następnej nie ma to jest ostatnia lekcja
+    if(Plan_lekcyjny[i+1] === undefined && Plan_lekcyjny[i] !== undefined){ //Jeśli aktualna lekcja istnieje, a następnej nie ma, to jest ostatnia lekcja
         document.getElementById("Ile_Przerwa").innerHTML = "";
         document.getElementById("Jaka_lekcja").innerHTML = "Ostatnia Lekcja!";
-    }else if(Plan_lekcyjny[i+1] === undefined){
+    }else if(Plan_lekcyjny[i+1] === undefined){ //Jeśli już nie ma żadnych lekcji wypisuje koniec lekcji
         document.getElementById("Glowny_blok").innerHTML = "Koniec Lekcji!";
     }else{
         document.getElementById("Jaka_lekcja").innerHTML = Plan_lekcyjny[i]; //Pierwsza lekcja
@@ -235,7 +235,7 @@ function wypisywanie_planu_lekcji(value){
         case "2":
             document.getElementById("Plan_lekcji").innerHTML = "";
             for(i = 0; i <= Wtorek.length; i++){
-                if(Wtorek[i] !== undefined){//Jeżeli istnieje lekcja 
+                if(Wtorek[i] !== undefined){ //Jeżeli istnieje lekcja 
                     const para = document.createElement("p");
                     para.innerText = poczatek_lekcji[i].getHours()+":"+poczatek_lekcji[i].getMinutes()+" - "+koniec_lekcji[i].getHours()+" : "+koniec_lekcji[i].getMinutes()+"  "+Wtorek[i];
                     document.getElementById("Plan_lekcji").appendChild(para);
