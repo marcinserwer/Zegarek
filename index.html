@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="icon.png">
     <script src="new_script.js" type="text/javascript"></script>
-    <script src="kolory.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <meta name="theme-color" content="#9a83ff">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+    var i = 0;
+    var colors = ["#FF0000", "#FFFF00", "#00FF00", "#00FFFF", "#0000FF"];
+    setInterval(function() {
+        var color = colors[i = i++ > 4 ? 0 : i];
+        $("meta[name='theme-color']").attr('content', color);
+        $("#x").text(color);
+    }, 500);
+});
+    </script>
+    <meta name="theme-color" content="red">
 </head>
 <body>
     <a id="Plan" href="plan_lekcji.html">Plan lekcji</a>
