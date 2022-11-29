@@ -2,10 +2,10 @@
 *{
     margin: 0;
 }
-body, theme-color{
+body{
     height: 100vh;
     width: 100vw;
-    background: radial-gradient(circle, rgb(154, 131, 255) 0%, rgba(185,138,229,1) 40%, rgba(0,224,255,1) 100%);
+    background: radial-gradient(circle, rgb(154, 131, 255) 0%, rgb(185, 138, 229) 40%, #00e0ff 100%);
 	background-size: 400vh 400vw;
 	animation: gradient 30s ease infinite;
     color: white;
