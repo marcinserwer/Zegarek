@@ -25,11 +25,12 @@ body{
     font-size: 13vmin;
 }
 #Jaka_Data{
-    font-size: 4vmin;
+    font-size: 5vmin;
     bottom: 0;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
+    white-space: nowrap;
 }
 #Plan{
     font-size:  3.3vmin;
@@ -43,7 +44,7 @@ a{
     color: white;
 }
 #Plan_lekcji{
-    font-size: 4vmin;
+    font-size: 3.8vmin;
     padding-top: 3vh;
 }
 #Plan_lekcji p{
