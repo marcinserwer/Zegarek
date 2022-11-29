@@ -49,6 +49,9 @@ a{
 #Plan_lekcji p{
     padding: 0.4vh;
 }
+#Ile_Przerwa{
+    padding: 0.5vh;
+}
 select{
     font-size: 2vmin;
     padding: 7px 40px 7px 12px;
